@@ -3,13 +3,16 @@ const app = express()
 const path = require('path')
 const port = process.env.PORT || 4545
 
-var Rollbar = require("rollbar")
+// include and initialize the rollbar library with your access token
+var Rollbar = require("rollbar");
 var rollbar = new Rollbar({
-    accessToken: '',
-    captureUncaught: true,
-    captureUnhandleRejections: true,
-    endpoint: ""
+  accessToken: '9403493b09e14b0f9dd20307522ce876',
+  captureUncaught: true,
+  captureUnhandledRejections: true
 });
+
+// record a generic message and send it to Rollbar
+rollbar.log("Hello world!");
 
 
 
